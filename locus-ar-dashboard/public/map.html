@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Locus AR — Map | Marokh</title>
+  <!-- Mapbox GL JS -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; }
+    #map { width: 100vw; height: 100vh; }
+    /* Mapbox controls container */
+    .mapboxgl-ctrl-bottom-right { margin: 12px; }
+    .mapboxgl-ctrl-bottom-left { margin: 12px; }
+    /* Custom popup styling */
+    .mapboxgl-popup-content {
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      min-width: 200px;
+    }
+    .locus-popup h3 { font-size: 16px; margin-bottom: 8px; color: #1a1a2e; }
+    .locus-popup p { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+    .locus-popup .btn-ar {
+      display: block;
+      width: 100%;
+      padding: 10px 16px;
+      background: #6366f1;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .locus-popup .btn-ar:hover { background: #4f46e5; }
+    /* Loading indicator */
+    #loading { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      background: #1e1e2e; color: white; padding: 20px 32px; border-radius: 12px;
+      z-index: 9999; font-size: 14px; display: none; }
+    #loading.show { display: block; }
+  </style>
+</head>
+<body>
+  <div id="loading" class="show">Getting your location...</div>
+  <div id="map"></div>
+  <script src="/map.js"></script>
+</body>
+</html>
